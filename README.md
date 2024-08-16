@@ -51,12 +51,14 @@ Execute o script SQL para criar as tabelas e inserir os dados:
    ```bash 
      return DriverManager.getConnection("jdbc:mysql://localhost:3306/petisko","megauser","mysql123");
    ```
+
 ---
 
 ## 4. Execução:
 
    Utilize o arquivo "Aplicacap.java" para executar o código.
    Após executá-lo, aparecerá as seguintes informações:
+   
    ```bash
       Menu:
        (1) C -> Create
@@ -67,11 +69,12 @@ Execute o script SQL para criar as tabelas e inserir os dados:
    ```
    Agora você poderá escolher uma das 4 opções através do número indicador, neste caso sendo o 1, 2, 3 ou 4. Contudo, cada umas destas opções apresentará um outro menu que perguntará para tabela do banco você deseja executar a ação escolhida. Este "novo" menu seguirá a mesma lógica de utilizar os números apresentados para selecionar.
    Por fim, depois de escolher a ação e a tabela a ser utilizada, preencha os dados requisitados e estará pronto a execução e comunicação com o banco de dados!
+   
 ---
 ### Autores:
 
-## Lucas Rodrigues;
-## Yuri Rodrigues;
+Lucas Rodrigues & Yuri Rodrigues;
+Última Atualização: 15/08/2024;
 
 ### Acabou :D
 
