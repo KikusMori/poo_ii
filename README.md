@@ -1,5 +1,5 @@
 
-# Atividade POO II - Petisko
+### Atividade POO II - Petisko
 
 ---
 
@@ -9,18 +9,18 @@ Este projeto é uma aplicação para gerenciar doações de animais. Ele permite
 
 ---
 
-# Tutorial
+### Tutorial
 
 ## 1. Clonagem do Repositório:
 
-   ### Pode-se usar este código para executar a clonagem do repositório.
+   # Pode-se usar este código para executar a clonagem do repositório.
    
     
    ```bash
       git clone https://github.com/usuario/poo_ii.git
    ```
 
-   ### Ou usar o GitHub Desktop e clonar através da url.
+   # Ou usar o GitHub Desktop e clonar através da url.
    
    ```bash
    https://github.com/KikusMori/poo_ii
@@ -67,15 +67,29 @@ Execute o script SQL para criar as tabelas e inserir os dados:
        (4) D -> Delete
        Escolha uma opção: 
    ```
-   Agora você poderá escolher uma das 4 opções através do número indicador, neste caso sendo o 1, 2, 3 ou 4. Contudo, cada umas destas opções apresentará um outro menu que perguntará para tabela do banco você deseja executar a ação escolhida. Este "novo" menu seguirá a mesma lógica de utilizar os números apresentados para selecionar.
+   Agora você poderá escolher uma das 4 opções através do número indicador, neste caso sendo o 1, 2, 3 ou 4. 
+   
+   Contudo, cada umas destas opções apresentará um outro menu que perguntará para tabela do banco você deseja executar a ação escolhida. Este "novo" menu seguirá a mesma lógica de utilizar os números apresentados para selecionar.
+
+   ```bash 
+      Menu:
+	  (1) AçãoCRUD Animal
+	  (2) AçãoCRUD Consulta
+	  (3) AçãoCRUD Doação
+	  (4) AçãoCRUD Pessoa
+	  (5) AçãoCRUD Raça
+	  (6) AçãoCRUD Tipo
+	  (7) AçãoCRUD Veterinário
+	  Escolha uma opção: 
+   ```
    Por fim, depois de escolher a ação e a tabela a ser utilizada, preencha os dados requisitados e estará pronto a execução e comunicação com o banco de dados!
    
 ---
-# Autores:
+### Autores:
 
 Lucas Rodrigues & Yuri Rodrigues;
 Última Atualização: 15/08/2024;
 
-# Acabou :D
+### Acabou :D
 
 
