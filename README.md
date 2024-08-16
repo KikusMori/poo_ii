@@ -13,14 +13,14 @@ Este projeto é uma aplicação para gerenciar doações de animais. Ele permite
 
 ## 1. Clonagem do Repositório:
 
-   # Pode-se usar este código para executar a clonagem do repositório.
+   ### Pode-se usar este código para executar a clonagem do repositório.
    
     
    ```bash
       git clone https://github.com/usuario/poo_ii.git
    ```
 
-   # Ou usar o GitHub Desktop e clonar através da url.
+   ### Ou usar o GitHub Desktop e clonar através da url.
    
    ```bash
    https://github.com/KikusMori/poo_ii
