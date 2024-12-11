@@ -92,7 +92,7 @@ public class VeterinarioDAO implements iVeterinarioDAO{
             try (ResultSet resultSet = preparedStatement.executeQuery()) {
                 if (resultSet.next()) {
                     veterinario = new Veterinario();
-                    Veterinario fVeterinario = veterinario;
+                    //Veterinario fVeterinario = veterinario;
                     veterinario.setId(resultSet.getLong("id"));
                     veterinario.setNome(resultSet.getString("nome"));
                     veterinario.setCerti(resultSet.getString("certificacao"));
@@ -123,7 +123,7 @@ public class VeterinarioDAO implements iVeterinarioDAO{
             try (ResultSet resultSet = preparedStatement.executeQuery()) {
                 if (resultSet.next()) {
                     veterinario = new Veterinario();
-                    Veterinario fVeterinario = veterinario;
+                    //Veterinario fVeterinario = veterinario;
                     veterinario.setId(resultSet.getLong("id"));
                     veterinario.setNome(resultSet.getString("nome"));
                     veterinario.setCerti(resultSet.getString("certificacao"));

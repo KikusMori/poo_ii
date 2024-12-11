@@ -81,6 +81,16 @@ public class Doacao {
         this.pessoa = pessoa;
     }
 
+    public String animalString() {
+        String str = animal.getNome();
+        return str;
+    }
+
+    public String pesString() {
+        String str = pessoa.getNome();
+        return str;
+    }
+
     public void printDoacao() {
         System.out.println("ID: " + this.id);
         System.out.println("Estado: " + this.estado);

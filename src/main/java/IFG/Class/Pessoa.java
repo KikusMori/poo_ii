@@ -9,16 +9,19 @@ public class Pessoa {
     private String datanasc;
 
  
-    public Pessoa() {
+    public Pessoa(Long id, String nome, String endereco, String telefone, String email, String datanasc) {
         this.id = id;
         this.nome = nome;
         this.endereco = endereco;
         this.telefone = telefone;
         this.email = email;
         this.datanasc = datanasc;
-
     }
 
+    public Pessoa(){
+
+    }
+    
     public Long getId() {
         return id;
     }

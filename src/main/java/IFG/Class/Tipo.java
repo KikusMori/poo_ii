@@ -1,10 +1,6 @@
 package IFG.Class;
 
 public class Tipo {
-    public class java {
-
-	}
-
 
 	private Long id;
     private String nome;

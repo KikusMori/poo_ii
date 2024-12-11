@@ -84,70 +84,8 @@ public class PessoaDAO implements iPessoaDAO{
         } catch (SQLException ex) {
             throw new RuntimeException(ex);
         }
-    } 
-
-    @Override
-    public Optional<Pessoa> findByIdpes(Long id) {
-        String sql = "SELECT * FROM pessoa WHERE id = ?";
-        Pessoa pessoa = null;
-        try (Connection connection = Banco.getConnection()) {
-            PreparedStatement preparedStatement = connection.prepareStatement(sql);
-            preparedStatement.setLong(1, id);
-            try (ResultSet resultSet = preparedStatement.executeQuery()) {
-                if (resultSet.next()) {
-                    pessoa = new Pessoa();
-                    Pessoa fPessoa = pessoa;
-                    pessoa.setId(resultSet.getLong("id"));
-                    pessoa.setNome(resultSet.getString("nome"));
-                    pessoa.setEndereco(resultSet.getString("endereco"));
-                    pessoa.setTelefone(resultSet.getString("telefone"));
-                    pessoa.setEmail(resultSet.getString("email"));
-                    pessoa.setData(resultSet.getString("datanasc"));
-
-                }
-            } catch (SQLException ex) {
-                throw new RuntimeException(ex);
-            } finally {
-                preparedStatement.close();
-            }
-        }
-        catch (SQLException ex){
-            throw new RuntimeException(ex);
-        }
-        return ofNullable(pessoa);
     }
     
-    @Override
-    public Optional<Pessoa> findByEmpes(String email) {
-        String sql = "SELECT * FROM pessoa WHERE email = ?";
-        Pessoa pessoa = null;
-        try (Connection connection = Banco.getConnection()) {
-            PreparedStatement preparedStatement = connection.prepareStatement(sql);
-            preparedStatement.setString(1, email);
-            try (ResultSet resultSet = preparedStatement.executeQuery()) {
-                if (resultSet.next()) {
-                    pessoa = new Pessoa();
-                    Pessoa fPessoa = pessoa;
-                    pessoa.setId(resultSet.getLong("id"));
-                    pessoa.setNome(resultSet.getString("nome"));
-                    pessoa.setEndereco(resultSet.getString("endereco"));
-                    pessoa.setTelefone(resultSet.getString("telefone"));
-                    pessoa.setEmail(resultSet.getString("email"));
-                    pessoa.setData(resultSet.getString("datanasc"));
-
-                }
-            } catch (SQLException ex) {
-                throw new RuntimeException(ex);
-            } finally {
-                preparedStatement.close();
-            }
-        }
-        catch (SQLException ex){
-            throw new RuntimeException(ex);
-        }
-        return ofNullable(pessoa);
-    }
-
     @Override
     public List<Pessoa> findAllpes() {
         List<Pessoa> pessoas = new ArrayList<>();
@@ -178,4 +116,68 @@ public class PessoaDAO implements iPessoaDAO{
         }
         return pessoas;
     }
+
+    @Override
+    public Optional<Pessoa> findByIdpes(Long id) {
+        String sql = "SELECT * FROM pessoa WHERE id = ?";
+        Pessoa pessoa = null;
+        try (Connection connection = Banco.getConnection()) {
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            preparedStatement.setLong(1, id);
+            try (ResultSet resultSet = preparedStatement.executeQuery()) {
+                if (resultSet.next()) {
+                    pessoa = new Pessoa();
+                    //Pessoa fPessoa = pessoa;
+                    pessoa.setId(resultSet.getLong("id"));
+                    pessoa.setNome(resultSet.getString("nome"));
+                    pessoa.setEndereco(resultSet.getString("endereco"));
+                    pessoa.setTelefone(resultSet.getString("telefone"));
+                    pessoa.setEmail(resultSet.getString("email"));
+                    pessoa.setData(resultSet.getString("datanasc"));
+
+                }
+            } catch (SQLException ex) {
+                throw new RuntimeException(ex);
+            } finally {
+                preparedStatement.close();
+            }
+        }
+        catch (SQLException ex){
+            throw new RuntimeException(ex);
+        }
+        return ofNullable(pessoa);
+    }
+    
+    @Override
+    public Optional<Pessoa> findByEmpes(String email) {
+        String sql = "SELECT * FROM pessoa WHERE email = ?";
+        Pessoa pessoa = null;
+        try (Connection connection = Banco.getConnection()) {
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            preparedStatement.setString(1, email);
+            try (ResultSet resultSet = preparedStatement.executeQuery()) {
+                if (resultSet.next()) {
+                    pessoa = new Pessoa();
+                    //Pessoa fPessoa = pessoa;
+                    pessoa.setId(resultSet.getLong("id"));
+                    pessoa.setNome(resultSet.getString("nome"));
+                    pessoa.setEndereco(resultSet.getString("endereco"));
+                    pessoa.setTelefone(resultSet.getString("telefone"));
+                    pessoa.setEmail(resultSet.getString("email"));
+                    pessoa.setData(resultSet.getString("datanasc"));
+
+                }
+            } catch (SQLException ex) {
+                throw new RuntimeException(ex);
+            } finally {
+                preparedStatement.close();
+            }
+        }
+        catch (SQLException ex){
+            throw new RuntimeException(ex);
+        }
+        return ofNullable(pessoa);
+    }
+
+
 }

@@ -66,6 +66,15 @@ public class Consulta {
         this.veterinario = veterinario;
     }
 
+    public String animalString() {
+        String str = animal.getNome();
+        return str;
+    }
+
+    public String vetString() {
+        String str = veterinario.getNome();
+        return str;
+    }
 
     public void printConsulta() {
         System.out.println("ID: " + this.id);

@@ -103,7 +103,7 @@ public class AnimalDAO implements iAnimalDAO{
             try (ResultSet resultSet = preparedStatement.executeQuery()) {
                 if (resultSet.next()) {
                     Animal = new Animal();
-                    Animal fAnimal = Animal;
+                    //Animal fAnimal = Animal;
                     Animal.setId(resultSet.getLong("id"));
                     Animal.setNome(resultSet.getString("nome"));
                     Animal.setDatanasc(resultSet.getString("datanasc"));
@@ -137,7 +137,7 @@ public class AnimalDAO implements iAnimalDAO{
             try (ResultSet resultSet = preparedStatement.executeQuery()) {
                 if (resultSet.next()) {
                     Animal = new Animal();
-                    Animal fAnimal = Animal;
+                    //Animal fAnimal = Animal;
                     Animal.setId(resultSet.getLong("id"));
                     Animal.setNome(resultSet.getString("nome"));
                     Animal.setDatanasc(resultSet.getString("datanasc"));

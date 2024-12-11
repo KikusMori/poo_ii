@@ -35,6 +35,16 @@ public class Animal {
         this.id = id;
     }
 
+    public String donoString() {
+        String str = pessoa.getNome();
+        return str;
+    }
+
+    public String racaString() {
+        String str = raca.getNome();
+        return str;
+    }
+
     public String getNome() {
         return nome;
     }
