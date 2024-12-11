@@ -93,7 +93,7 @@ public class DoacaoDAO implements iDoacaoDAO{
             try (ResultSet resultSet = preparedStatement.executeQuery()) {
                 if (resultSet.next()) {
                     Doacao = new Doacao();
-                    Doacao fDoacao = Doacao;
+                    //Doacao fDoacao = Doacao;
                     Doacao.setId(resultSet.getLong("id"));
                     Doacao.setEstado(resultSet.getString("estado"));
                     Doacao.setDescricao(resultSet.getString("descricao"));

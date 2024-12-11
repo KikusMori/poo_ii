@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selecionar Entidade</title>
+    <script>
+        function showForm() {
+            const entity = document.getElementById("entity-select").value;
+            const form = document.getElementById("form-container");
+
+            form.innerHTML = ''; // Limpa o formulário antes de preencher novamente.
+
+            // Gerar campos de acordo com a entidade
+            if (entity === "animal") {
+                form.innerHTML = `
+                    <h3>Selecionar Animal</h3>
+                    <form action="selectAnimal" method="GET">
+                        <label for="id">ID do Animal:</label><br>
+                        <input type="number" id="id" name="id"><br><br>
+                        <button type="submit">Buscar Animal</button>
+                    </form>
+                `;
+            } else if (entity === "pessoa") {
+                form.innerHTML = `
+                    <h3>Selecionar Pessoa</h3>
+                    <form action="selectPessoa" method="GET">
+                        <label for="id">ID da Pessoa:</label><br>
+                        <input type="number" id="id" name="id"><br><br>
+                        <button type="submit">Buscar Pessoa</button>
+                    </form>
+                `;
+            } else if (entity === "consulta") {
+                form.innerHTML = `
+                    <h3>Selecionar Consulta</h3>
+                    <form action="selectConsulta" method="GET">
+                        <label for="id">ID da Consulta:</label><br>
+                        <input type="number" id="id" name="id"><br><br>
+                        <button type="submit">Buscar Consulta</button>
+                    </form>
+                `;
+            } else if (entity === "doacao") {
+                form.innerHTML = `
+                    <h3>Selecionar Doação</h3>
+                    <form action="selectDoacao" method="GET">
+                        <label for="id">ID da Doação:</label><br>
+                        <input type="number" id="id" name="id"><br><br>
+                        <button type="submit">Buscar Doação</button>
+                    </form>
+                `;
+            } else if (entity === "raca") {
+                form.innerHTML = `
+                    <h3>Selecionar Raça</h3>
+                    <form action="selectRaca" method="GET">
+                        <label for="id">ID da Raça:</label><br>
+                        <input type="number" id="id" name="id"><br><br>
+                        <button type="submit">Buscar Raça</button>
+                    </form>
+                `;
+            } else if (entity === "tipo") {
+                form.innerHTML = `
+                    <h3>Selecionar Tipo</h3>
+                    <form action="selectTipo" method="GET">
+                        <label for="id">ID do Tipo:</label><br>
+                        <input type="number" id="id" name="id"><br><br>
+                        <button type="submit">Buscar Tipo</button>
+                    </form>
+                `;
+            } else if (entity === "veterinario") {
+                form.innerHTML = `
+                    <h3>Selecionar Veterinário</h3>
+                    <form action="selectVeterinario" method="GET">
+                        <label for="id">ID do Veterinário:</label><br>
+                        <input type="number" id="id" name="id"><br><br>
+                        <button type="submit">Buscar Veterinário</button>
+                    </form>
+                `;
+            }
+            
+        }
+    </script>
+</head>
+<body>
+    <h1>Selecionar Entidade</h1>
+    <label for="entity-select">Escolha uma entidade para selecionar:</label><br>
+    <select id="entity-select" onchange="showForm()">
+        <option value="">Selecione a entidade...</option>
+        <option value="animal">Animal</option>
+        <option value="pessoa">Pessoa</option>
+        <option value="consulta">Consulta</option>
+        <option value="doacao">Doação</option>
+        <option value="raca">Raça</option>
+        <option value="tipo">Tipo</option>
+        <option value="veterinario">Veterinário</option>
+    </select>
+
+    <div id="form-container">
+        <!-- Formulário dinâmico será inserido aqui -->
+    </div>
+
+    <br>
+    <a href="menu.html">Voltar ao Menu</a>
+</body>
+</html>

@@ -88,7 +88,7 @@ public class TipoDAO implements iTipoDAO{
             try (ResultSet resultSet = preparedStatement.executeQuery()) {
                 if (resultSet.next()) {
                     tipo = new Tipo();
-                    Tipo fTipo = tipo;
+                    //Tipo fTipo = tipo;
                     tipo.setId(resultSet.getLong("id"));
                     tipo.setNome(resultSet.getString("nome"));
                     
@@ -116,7 +116,7 @@ public class TipoDAO implements iTipoDAO{
             try (ResultSet resultSet = preparedStatement.executeQuery()) {
                 if (resultSet.next()) {
                     tipo = new Tipo();
-                    Tipo fTipo = tipo;
+                    //Tipo fTipo = tipo;
                     tipo.setId(resultSet.getLong("id"));
                     tipo.setNome(resultSet.getString("nome"));
                     

@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://java.sun.com/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+             http://java.sun.com/xml/ns/javaee/web-app_3_1.xsd"
+         version="3.1">
+
+
+
+    <!-- Pessoa -->
+    <!-- Configuração do Servlet para Create -->
+    <servlet>
+        <servlet-name>CP</servlet-name>
+        <servlet-class>IFG.Web.Pessoa.CP</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CP</servlet-name>
+        <url-pattern>/createPessoa</url-pattern>
+    </servlet-mapping>
+
+    <!-- Configuração do Servlet para Listagem (Select) -->
+    <servlet>
+        <servlet-name>RP</servlet-name>
+        <servlet-class>IFG.Web.Pessoa.RP</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>RP</servlet-name>
+        <url-pattern>/selectPessoa</url-pattern>
+    </servlet-mapping>
+
+    <!-- Configuração do Servlet para Update -->
+    <servlet>
+        <servlet-name>UP</servlet-name>
+        <servlet-class>IFG.Web.Pessoa.UP</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UP</servlet-name>
+        <url-pattern>/updatePessoa</url-pattern>
+    </servlet-mapping>
+
+    <!-- Configuração do Servlet para Delete -->
+    <servlet>
+        <servlet-name>DP</servlet-name>
+        <servlet-class>IFG.Web.Pessoa.DP</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DP</servlet-name>
+        <url-pattern>/deletePessoa</url-pattern>
+    </servlet-mapping>
+
+    <!-- Animal -->
+    <!-- Configuração do Servlet para Create -->
+    <servlet>
+        <servlet-name>CA</servlet-name>
+        <servlet-class>IFG.Web.Animal.CA</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CA</servlet-name>
+        <url-pattern>/createAnimal</url-pattern>
+    </servlet-mapping>
+
+    <!-- Configuração do Servlet para Listagem (Select) -->
+    <servlet>
+        <servlet-name>RA</servlet-name>
+        <servlet-class>IFG.Web.Animal.RA</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>RA</servlet-name>
+        <url-pattern>/selectAnimal</url-pattern>
+    </servlet-mapping>
+
+    <!-- Configuração do Servlet para Update -->
+    <servlet>
+        <servlet-name>UA</servlet-name>
+        <servlet-class>IFG.Web.Animal.UA</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UA</servlet-name>
+        <url-pattern>/updateAnimal</url-pattern>
+    </servlet-mapping>
+
+    <!-- Configuração do Servlet para Delete -->
+    <servlet>
+        <servlet-name>DA</servlet-name>
+        <servlet-class>IFG.Web.Animal.DA</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DA</servlet-name>
+        <url-pattern>/deleteAnimal</url-pattern>
+    </servlet-mapping>
+
+<!-- Consulta -->
+    <!-- Configuração do Servlet para Create -->
+    <servlet>
+        <servlet-name>CC</servlet-name>
+        <servlet-class>IFG.Web.Consulta.CC</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CC</servlet-name>
+        <url-pattern>/createConsulta</url-pattern>
+    </servlet-mapping>
+
+    <!-- Configuração do Servlet para Listagem (Select) -->
+    <servlet>
+        <servlet-name>RC</servlet-name>
+        <servlet-class>IFG.Web.Consulta.RC</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>RC</servlet-name>
+        <url-pattern>/selectConsulta</url-pattern>
+    </servlet-mapping>
+
+    <!-- Configuração do Servlet para Update -->
+    <servlet>
+        <servlet-name>UC</servlet-name>
+        <servlet-class>IFG.Web.Consulta.UC</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UC</servlet-name>
+        <url-pattern>/updateConsulta</url-pattern>
+    </servlet-mapping>
+
+    <!-- Configuração do Servlet para Delete -->
+    <servlet>
+        <servlet-name>DC</servlet-name>
+        <servlet-class>IFG.Web.Consulta.DC</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DC</servlet-name>
+        <url-pattern>/deleteConsulta</url-pattern>
+    </servlet-mapping>
+
+    <!-- Doação -->
+    <!-- Configuração do Servlet para Create -->
+    <servlet>
+        <servlet-name>CD</servlet-name>
+        <servlet-class>IFG.Web.Doacao.CD</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CD</servlet-name>
+        <url-pattern>/createDoacao</url-pattern>
+    </servlet-mapping>
+
+    <!-- Configuração do Servlet para Listagem (Select) -->
+    <servlet>
+        <servlet-name>RD</servlet-name>
+        <servlet-class>IFG.Web.Doacao.RD</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>RD</servlet-name>
+        <url-pattern>/selectDoacao</url-pattern>
+    </servlet-mapping>
+
+    <!-- Configuração do Servlet para Update -->
+    <servlet>
+        <servlet-name>UD</servlet-name>
+        <servlet-class>IFG.Web.Doacao.UD</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UD</servlet-name>
+        <url-pattern>/updateDoacao</url-pattern>
+    </servlet-mapping>
+
+    <!-- Configuração do Servlet para Delete -->
+    <servlet>
+        <servlet-name>DD</servlet-name>
+        <servlet-class>IFG.Web.Doacao.DD</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DD</servlet-name>
+        <url-pattern>/deleteDoacao</url-pattern>
+    </servlet-mapping>
+
+    <!-- Raça -->
+    <!-- Configuração do Servlet para Create -->
+    <servlet>
+        <servlet-name>CR</servlet-name>
+        <servlet-class>IFG.Web.Raca.CR</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CR</servlet-name>
+        <url-pattern>/createRaca</url-pattern>
+    </servlet-mapping>
+
+    <!-- Configuração do Servlet para Listagem (Select) -->
+    <servlet>
+        <servlet-name>RR</servlet-name>
+        <servlet-class>IFG.Web.Raca.RR</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>RR</servlet-name>
+        <url-pattern>/selectRaca</url-pattern>
+    </servlet-mapping>
+
+    <!-- Configuração do Servlet para Update -->
+    <servlet>
+        <servlet-name>UR</servlet-name>
+        <servlet-class>IFG.Web.Raca.UR</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UR</servlet-name>
+        <url-pattern>/updateRaca</url-pattern>
+    </servlet-mapping>
+
+    <!-- Configuração do Servlet para Delete -->
+    <servlet>
+        <servlet-name>DR</servlet-name>
+        <servlet-class>IFG.Web.Raca.DR</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DR</servlet-name>
+        <url-pattern>/deleteRaca</url-pattern>
+    </servlet-mapping>
+
+    <!-- Tipo -->
+    <!-- Configuração do Servlet para Create -->
+    <servlet>
+        <servlet-name>CT</servlet-name>
+        <servlet-class>IFG.Web.Tipo.CT</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CT</servlet-name>
+        <url-pattern>/createTipo</url-pattern>
+    </servlet-mapping>
+
+    <!-- Configuração do Servlet para Listagem (Select) -->
+    <servlet>
+        <servlet-name>RT</servlet-name>
+        <servlet-class>IFG.Web.Tipo.RT</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>RT</servlet-name>
+        <url-pattern>/selectTipo</url-pattern>
+    </servlet-mapping>
+
+    <!-- Configuração do Servlet para Update -->
+    <servlet>
+        <servlet-name>UT</servlet-name>
+        <servlet-class>IFG.Web.Tipo.UT</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UT</servlet-name>
+        <url-pattern>/updateTipo</url-pattern>
+    </servlet-mapping>
+
+    <!-- Configuração do Servlet para Delete -->
+    <servlet>
+        <servlet-name>DT</servlet-name>
+        <servlet-class>IFG.Web.Tipo.DT</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DT</servlet-name>
+        <url-pattern>/deleteTipo</url-pattern>
+    </servlet-mapping>
+
+    <!-- Veterinario -->
+    <!-- Configuração do Servlet para Create -->
+    <servlet>
+        <servlet-name>CVE</servlet-name>
+        <servlet-class>IFG.Web.Veterinario.CVE</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CVE</servlet-name>
+        <url-pattern>/createVeterinario</url-pattern>
+    </servlet-mapping>
+
+    <!-- Configuração do Servlet para Listagem (Select) -->
+    <servlet>
+        <servlet-name>RVE</servlet-name>
+        <servlet-class>IFG.Web.Veterinario.RVE</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>RVE</servlet-name>
+        <url-pattern>/selectVeterinario</url-pattern>
+    </servlet-mapping>
+
+    <!-- Configuração do Servlet para Update -->
+    <servlet>
+        <servlet-name>UVE</servlet-name>
+        <servlet-class>IFG.Web.Veterinario.UVE</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UVE</servlet-name>
+        <url-pattern>/updateVeterinario</url-pattern>
+    </servlet-mapping>
+
+    <!-- Configuração do Servlet para Delete -->
+    <servlet>
+        <servlet-name>DVE</servlet-name>
+        <servlet-class>IFG.Web.Veterinario.DVE</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DVE</servlet-name>
+        <url-pattern>/deleteVeterinario</url-pattern>
+    </servlet-mapping>
+
+</web-app>

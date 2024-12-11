@@ -1,8 +1,6 @@
 package IFG.DAOs;
 import IFG.Banco;
 import IFG.Class.Consulta;
-import IFG.Class.Pessoa;
-import IFG.Class.Raca;
 import IFG.Class.Animal;
 import IFG.Class.Veterinario;
 import IFG.DAOs.iDAO.iConsultaDAO;
@@ -90,7 +88,7 @@ public class ConsultaDAO implements iConsultaDAO{
             try (ResultSet resultSet = preparedStatement.executeQuery()) {
                 if (resultSet.next()) {
                     Consulta = new Consulta();
-                    Consulta fConsulta = Consulta;
+                    //Consulta fConsulta = Consulta;
                     Consulta.setId(resultSet.getLong("id"));
                     Consulta.setDiagnostico(resultSet.getString("diagnostico"));
                     Consulta.setData(resultSet.getString("data"));

@@ -95,7 +95,7 @@ public class RacaDAO implements iRacaDAO{
             try (ResultSet resultSet = preparedStatement.executeQuery()) {
                 if (resultSet.next()) {
                     raca = new Raca();
-                    Raca fRaca = raca;
+                    //Raca fRaca = raca;
                     raca.setId(resultSet.getLong("id"));
                     raca.setNome("nome");
                     raca.setDescricao("descricao");
@@ -126,7 +126,7 @@ public class RacaDAO implements iRacaDAO{
             try (ResultSet resultSet = preparedStatement.executeQuery()) {
                 if (resultSet.next()) {
                     raca = new Raca();
-                    Raca fRaca = raca;
+                    //Raca fRaca = raca;
                     raca.setId(resultSet.getLong("id"));
                     raca.setNome("nome");
                     raca.setDescricao("descricao");

@@ -58,6 +58,11 @@ public class Raca {
         this.tipo = tipo;
     }
 
+    public String tipoString() {
+        String str = tipo.getNome();
+        return str;
+    }
+
     public void printRaca() {
         System.out.print("ID: " + this.id);
         System.out.print(" Nome: " + this.nome);
