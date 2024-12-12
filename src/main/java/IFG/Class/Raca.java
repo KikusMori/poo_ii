@@ -14,17 +14,10 @@ public class Raca {
         this.tipo = tipo;
     }
 
-    public Raca(String nome, Tipo reino) {
-        this.id = null;
-        this.nome = nome;
-        this.tipo = reino;
-    }
-
     public Raca() {
-        this.id = null;
-        this.nome = null;
-        this.tipo = null;
+
     }
+    
 
     public Long getId() {
         return id;
@@ -58,10 +51,14 @@ public class Raca {
         this.tipo = tipo;
     }
 
-    public String tipoString() {
-        String str = tipo.getNome();
-        return str;
+    public String getTipoN() {
+        if (tipo != null) {
+            return tipo.getNome();
+        } else {
+            return "Sem tipo"; 
+        }
     }
+    
 
     public void printRaca() {
         System.out.print("ID: " + this.id);

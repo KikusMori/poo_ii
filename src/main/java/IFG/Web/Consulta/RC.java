@@ -32,8 +32,8 @@ public class RC extends HttpServlet {
             response.getWriter().println("<h1>Consulta Selecionada</h1>");
             response.getWriter().println("<p>Diagnóstico: " + consulta.getDiagnostico() + "</p>");
             response.getWriter().println("<p>Data: " + consulta.getData() + "</p>");
-            response.getWriter().println("<p>Veterinário: " + consulta.vetString() + "</p>");
-            response.getWriter().println("<p>Animal: " + consulta.animalString() + "</p>");
+            response.getWriter().println("<p>Veterinário: " + consulta.getVet() + "</p>");
+            response.getWriter().println("<p>Animal: " + consulta.getAnimal() + "</p>");
             response.getWriter().println("<a href='/menu.html'>Voltar ao menu</a>");
             response.getWriter().write("</body></html>");
         } catch (Exception e) {

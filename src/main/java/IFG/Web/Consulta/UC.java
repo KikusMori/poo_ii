@@ -48,8 +48,8 @@ public class UC extends HttpServlet {
             response.getWriter().println("<h1>Registro atualizado com sucesso!</h1>");
             response.getWriter().println("<p>Diagnóstico: " + consulta.getDiagnostico() + "</p>");
             response.getWriter().println("<p>Data: " + consulta.getData() + "</p>");
-            response.getWriter().println("<p>Veterinário: " + consulta.vetString() + "</p>");
-            response.getWriter().println("<p>Animal: " + consulta.animalString() + "</p>");
+            response.getWriter().println("<p>Veterinário: " + veterinario.getNome() + "</p>");
+            response.getWriter().println("<p>Animal: " + animal.getNome() + "</p>");
             response.getWriter().println("<a href='/menu.html'>Voltar ao menu</a>");
             response.getWriter().write("</body></html>");
         } catch (Exception e) {

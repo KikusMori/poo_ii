@@ -57,8 +57,8 @@ public class UA extends HttpServlet {
             response.getWriter().write("<p>Foto: " + animal.getFoto() + "</p>");
             response.getWriter().write("<p>Doado: " + animal.getDoado() + "</p>");
             response.getWriter().write("<p>Idade: " + animal.getIdade() + "</p>");
-            response.getWriter().write("<p>Dono: " + animal.donoString() + "</p>");
-            response.getWriter().write("<p>Raça: " + animal.racaString() + "</p>");
+            response.getWriter().write("<p>Dono: " + pessoa.getNome() + "</p>");
+            response.getWriter().write("<p>Raça: " + raca.getNome() + "</p>");
             response.getWriter().println("<a href='/menu.html'>Voltar ao menu</a>");
             response.getWriter().write("</body></html>");
         } catch (Exception e) {
