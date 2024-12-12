@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atualizar Entidade</title>
+    <script>
+        
+        function showForm() {
+            const entity = document.getElementById("entity-select").value;
+            const form = document.getElementById("form-container");
+
+            form.innerHTML = ''; 
+
+            if (entity === "animal") {
+                form.innerHTML = `
+                    <form action="/updateAnimal" method="POST">
+                    <h3>Atualizar Animal</h3>
+                    <label for="id">ID:</label><br>
+                    <input type="number" id="id" name="id"><br><br>
+
+                    <label for="nome">Nome do Animal:</label><br>
+                    <input type="text" id="nome" name="nome"><br><br>
+
+                    <label for="datanasc">Data de Nacimento ("XX/XX/XXXX"):</label><br>
+                    <input type="text" id="datanasc" name="datanasc"><br><br>
+
+                    <label for="foto">Imagem (url):</label><br>
+                    <input type="text" id="foto" name="foto"><br><br>
+
+                    <label for="doado">Foi Doado?:</label>
+                    <select id="doado" name="doado">
+                        <option value="true">Sim</option>
+                        <option value="false">Não</option>
+                    </select><br><br>
+
+                    <label for="idade">Idade:</label><br>
+                    <input type="number" id="idade" name="idade"><br><br>
+
+                    <label for="idp">Dono:</label><br>
+                    <input type="text" id="idp" name="idp"><br><br>
+
+                    <label for="idr">Raça:</label><br>
+                    <input type="text" id="idr" name="idr"><br><br>
+
+                    <button type="submit">Atualizar Animal</button>
+                `;
+                //fetchOptions('/selectPessoa', 'idp', 'Selecione o dono');
+                //fetchOptions('/selectRaca', 'idr', 'Selecione a raça');
+            } else if (entity === "pessoa") {
+                form.innerHTML = `
+                    <form action="/updatePessoa" method="POST">
+                    <h3>Atualizar Pessoa</h3>
+                    
+                    <label for="id">ID:</label><br>
+                    <input type="number" id="id" name="id"><br><br>
+
+                    <label for="nome">Nome da Pessoa:</label><br>
+                    <input type="text" id="nome" name="nome"><br><br>
+
+                    <label for="endereco">Endereço da Pessoa:</label><br>
+                    <input type="text" id="endereco" name="endereco"><br><br>
+
+                    <label for="telefone">Telefone da Pessoa:</label><br>
+                    <input type="text" id="telefone" name="telefone"><br><br>
+
+                    <label for="email">Email:</label><br>
+                    <input type="text" id="email" name="email"><br><br>
+
+                    <label for="datanasc">Data de Nacimento ("XX/XX/XXXX"):</label><br>
+                    <input type="text" id="datanasc" name="datanasc"><br><br>
+
+                    <button type="submit">Atualizar Pessoa</button>
+                `;
+            } else if (entity === "consulta") {
+                form.innerHTML = `
+                    <form action="/updateConsulta" method="POST">
+                    <h3>Atualizar Consulta</h3>
+
+                    <label for="id">ID:</label><br>
+                    <input type="number" id="id" name="id"><br><br>
+
+                    <label for="diagnostico">Diagnóstico:</label><br>
+                    <input type="text" id="diagnostico" name="diagnostico"><br><br>
+
+                    <label for="data">Data de consulta("XX/XX/XXXX"):</label><br>
+                    <input type="text" id="data" name="data"><br><br>
+
+                    <label for="ida">Animal:</label><br>
+                    <input type="text" id="ida" name="ida"><br><br>
+
+                    <label for="idv">Veterinário:</label><br>
+                    <input type="text" id="idv" name="idv"><br><br>
+
+                    <button type="submit">Atualizar Consulta</button>
+                `;
+                //fetchOptions('/selectAnimal', 'ida', 'Selecione o animal');
+                //fetchOptions('/selectVeterinario', 'idv', 'Selecione Vet');
+            } else if (entity === "doacao") {
+                form.innerHTML = `
+                    <form action="/updateDoacao" method="POST">
+                    <h3>Atualizar Doação</h3>
+
+                    <label for="id">ID:</label><br>
+                    <input type="number" id="id" name="id"><br><br>                    
+
+                    <label for="estado">Estado da Doação:</label><br>
+                    <input type="text" id="estado" name="estado"><br><br>
+
+                    <label for="descricao">Descrição:</label><br>
+                    <input type="text" id="descricao" name="descricao"><br><br>
+
+                    <label for="datadoa">Data de Doação ("XX/XX/XXXX"):</label><br>
+                    <input type="text" id="datadoa" name="datadoa"><br><br>
+
+                    <label for="datarec">Data de Recebimento do Animal ("XX/XX/XXXX"):</label><br>
+                    <input type="text" id="datarec" name="datarec"><br><br>
+
+                    <label for="ida">Animal:</label><br>
+                    <input type="text" id="ida" name="ida"><br><br>
+
+                    <label for="idp">Pessoa:</label><br>
+                    <input type="text" id="idp" name="idp"><br><br>
+
+                    <button type="submit">Atualizar Doação</button>
+                `;
+                //fetchOptions('/selectAnimal', 'ida', 'Selecione o animal');
+                //fetchOptions('/selectPessoa', 'idp', 'Selecione a pessoa');
+            } else if (entity === "raca") {
+                form.innerHTML = `
+                    <form action="/updateRaca" method="POST">
+                    <h3>Atualizar Raça</h3>
+
+                    <label for="id">ID:</label><br>
+                    <input type="number" id="id" name="id"><br><br>
+
+                    <label for="nome">Nome da raça:</label><br>
+                    <input type="text" id="nome" name="nome"><br><br>
+
+                    <label for="descricao">Descrição:</label><br>
+                    <input type="text" id="descricao" name="descricao"><br><br>
+
+                    <label for="idt">Tipo:</label><br>
+                    <input type="text" id="idt" name="idt"><br><br>
+
+                    <button type="submit">Atualizar Raça</button>
+                `;
+                //fetchOptions('/selectTipo', 'idt', 'Selecione o tipo');
+            } else if (entity === "tipo") {
+                form.innerHTML = `
+                    <form action="/updateTipo" method="POST">
+                    <h3>Atualizar Tipo de Animal</h3>
+
+                    <label for="id">ID:</label><br>
+                    <input type="number" id="id" name="id"><br><br>
+
+                    <label for="nome">Nome do Tipo:</label><br>
+                    <input type="text" id="nome" name="nome"><br><br>
+
+                    <button type="submit">Atualizar Tipo</button>
+                `;
+            } else if (entity === "veterinario") {
+                form.innerHTML = `
+                    <form action="/updateVeterinario" method="POST">
+                    <h3>Atualizar Veterinário</h3>
+
+                    <label for="id">ID:</label><br>
+                    <input type="number" id="id" name="id"><br><br>
+
+                    <label for="nome">Nome:</label><br>
+                    <input type="text" id="nome" name="nome"><br><br>
+
+                    <label for="telefone">Certificação:</label><br>
+                    <input type="text" id="certificacao" name="certificacao"><br><br>
+
+                    <label for="local">Local de atendimento:</label><br>
+                    <input type="text" id="local" name="local"><br><br>
+
+                    <label for="especialidade">Especialidade:</label><br>
+                    <input type="text" id="especialidade" name="especialidade"><br><br>
+
+                    <button type="submit">Atualizar Veterinário</button>
+                `;
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Atualizar Entidade</h1>
+    <select id="entity-select" onchange="showForm()">
+        <option value="">Escolha a entidade</option>
+        <option value="animal">Animal</option>
+        <option value="pessoa">Pessoa</option>
+        <option value="consulta">Consulta</option>
+        <option value="doacao">Doação</option>
+        <option value="raca">Raça</option>
+        <option value="tipo">Tipo</option>
+        <option value="veterinario">Veterinário</option>
+    </select>
+
+    <div id="form-container">
+        <!-- Formulário dinâmico será inserido aqui -->
+    </div>
+
+    <br>
+    <a href="menu.html">Voltar ao Menu</a>
+</body>
+</html>
