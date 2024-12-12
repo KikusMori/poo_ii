@@ -39,7 +39,7 @@ public class UR extends HttpServlet {
             response.getWriter().println("<h1>Registro atualizado com sucesso!</h1>");
             response.getWriter().println("<p>Nome: " + raca.getNome() + "</p>");
             response.getWriter().println("<p>Descrição: " + raca.getDescricao() + "</p>");
-            response.getWriter().println("<p>Tipo: " + raca.tipoString() + "</p>");
+            response.getWriter().println("<p>Tipo: " + tipo.getNome() + "</p>");
             response.getWriter().println("<a href='/menu.html'>Voltar ao menu</a>");
             response.getWriter().write("</body></html>");
         } catch (Exception e) {

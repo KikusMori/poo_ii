@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criar Entidade</title>
+    <script>
+        async function fetchOptions(endpoint, selectId, defaultText) {
+            try {
+                const response = await fetch(endpoint); // URL do servlet que retorna os dados
+                if (!response.ok) throw new Error("Erro ao buscar dados!");
+
+                const data = await response.json();
+                const select = document.getElementById(selectId);
+
+                select.innerHTML = `<option value="">${defaultText}</option>`;
+                data.forEach(item => {
+                    const option = document.createElement('option');
+                    option.value = item.id;
+                    option.textContent = item.nome;
+                    select.appendChild(option);
+                });
+            } catch (error) {
+                console.error("Erro ao buscar opções:", error);
+            }
+        }
+
+        function showForm() {
+            const entity = document.getElementById("entity-select").value;
+            const form = document.getElementById("form-container");
+
+            form.innerHTML = ''; // Limpa o formulário antes de preencher novamente.
+
+            if (entity === "animal") {
+                form.innerHTML = `
+                    <h3>Criar Animal</h3>
+                    <label for="nome">Nome do Animal:</label><br>
+                    <input type="text" id="nome" name="nome"><br><br>
+
+                    <label for="tipo">Tipo de Animal:</label><br>
+                    <input type="text" id="tipo" name="tipo"><br><br>
+
+                    <label for="idade">Idade:</label><br>
+                    <input type="number" id="idade" name="idade"><br><br>
+
+                    <label for="id_dono">Dono:</label><br>
+                    <select id="id_dono" name="id_dono"></select><br><br>
+
+                    <label for="id_raca">Raça:</label><br>
+                    <select id="id_raca" name="id_raca"></select><br><br>
+
+                    <button type="submit">Criar Animal</button>
+                `;
+                // Preencher os selects das FKs
+                fetchOptions('/getPessoas', 'id_dono', 'Selecione o dono');
+                fetchOptions('/getRacas', 'id_raca', 'Selecione a raça');
+            } else if (entity === "consulta") {
+                form.innerHTML = `
+                    <h3>Criar Consulta</h3>
+                    <label for="data">Data da Consulta:</label><br>
+                    <input type="date" id="data" name="data"><br><br>
+
+                    <label for="id_veterinario">Veterinário:</label><br>
+                    <select id="id_veterinario" name="id_veterinario"></select><br><br>
+
+                    <label for="id_animal">Animal:</label><br>
+                    <select id="id_animal" name="id_animal"></select><br><br>
+
+                    <button type="submit">Criar Consulta</button>
+                `;
+                fetchOptions('/getVeterinarios', 'id_veterinario', 'Selecione o veterinário');
+                fetchOptions('/getAnimais', 'id_animal', 'Selecione o animal');
+            } else if (entity === "doacao") {
+                form.innerHTML = `
+                    <h3>Criar Doação</h3>
+                    <label for="data">Data da Doação:</label><br>
+                    <input type="date" id="data" name="data"><br><br>
+
+                    <label for="id_doador">Doador:</label><br>
+                    <select id="id_doador" name="id_doador"></select><br><br>
+
+                    <label for="id_animal">Animal:</label><br>
+                    <select id="id_animal" name="id_animal"></select><br><br>
+
+                    <button type="submit">Criar Doação</button>
+                `;
+                fetchOptions('/getPessoas', 'id_doador', 'Selecione o doador');
+                fetchOptions('/getAnimais', 'id_animal', 'Selecione o animal');
+            } else if (entity === "raca") {
+                form.innerHTML = `
+                    <h3>Criar Raça</h3>
+                    <label for="nome">Nome da Raça:</label><br>
+                    <input type="text" id="nome" name="nome"><br><br>
+
+                    <label for="id_tipo">Tipo de Animal:</label><br>
+                    <select id="id_tipo" name="id_tipo"></select><br><br>
+
+                    <button type="submit">Criar Raça</button>
+                `;
+                fetchOptions('/getTipos', 'id_tipo', 'Selecione o tipo');
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Criar Entidade</h1>
+    <label for="entity-select">Escolha uma entidade para criar:</label><br>
+    <select id="entity-select" onchange="showForm()">
+        <option value="">Selecione a entidade...</option>
+        <option value="animal">Animal</option>
+        <option value="consulta">Consulta</option>
+        <option value="doacao">Doação</option>
+        <option value="raca">Raça</option>
+        <!-- Adicione outras opções de entidades aqui -->
+    </select>
+
+    <div id="form-container">
+        <!-- Formulário dinâmico será inserido aqui -->
+    </div>
+
+    <br>
+    <a href="menu.html">Voltar ao Menu</a>
+</body>
+</html>

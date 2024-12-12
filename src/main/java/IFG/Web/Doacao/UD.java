@@ -53,8 +53,8 @@ public class UD extends HttpServlet {
             response.getWriter().write("<p>Descrição: " + doacao.getDescricao() + "</p>");
             response.getWriter().write("<p>Data de Doação: " + doacao.getDatadoa() + "</p>");
             response.getWriter().write("<p>Data de Recebimento: " + doacao.getDatarec() + "</p>");
-            response.getWriter().write("<p>Animal: " + doacao.animalString() + "</p>");
-            response.getWriter().write("<p>Pessoa: " + doacao.pesString() + "</p>");
+            response.getWriter().write("<p>Animal: " + animal.getNome() + "</p>");
+            response.getWriter().write("<p>Pessoa: " + pessoa.getNome() + "</p>");
             response.getWriter().println("<a href='/menu.html'>Voltar ao menu</a>");
             response.getWriter().write("</body></html>");
         } catch (Exception e) {
